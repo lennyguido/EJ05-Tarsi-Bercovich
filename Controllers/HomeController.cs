@@ -18,10 +18,58 @@ public class HomeController : Controller
         return View();
     }
     [HttpPost]
-    public IActionResult GuardarDatos()
-    {
-        return View();
-    }
+public IActionResult GuardarDatos(
+    string nombre,
+    int edad,
+    int dni,
+    string trabajo,
+    int tipoEmpleo,
+    int ingMensual,
+    string otrasDeudas,
+    bool tarjetaCredito,
+    bool prestamoBancario,
+    bool prestamoInformal,
+    int montoSolicitado,
+    int plazoDevolucion,
+    bool aceptaTerminos)
+{
+
+    ViewBag.nombre = nombre;
+    ViewBag.edad = edad;
+    ViewBag.dni = dni;
+    ViewBag.trabajo = trabajo;
+    ViewBag.tipoEmpleo = tipoEmpleo;
+    ViewBag.ingMensual = ingMensual;
+    ViewBag.otrasDeudas = otrasDeudas;
+    ViewBag.tarjetaCredito = tarjetaCredito;
+    ViewBag.prestamoBancario = prestamoBancario;
+    ViewBag.prestamoInformal = prestamoInformal;
+    ViewBag.montoSolicitado = montoSolicitado;
+    ViewBag.plazoDevolucion = plazoDevolucion;
+    ViewBag.aceptaTerminos = aceptaTerminos;
+
+    verificar ver = new verificar();
+
+    bool puede = ver.puede(
+        nombre,
+        edad,
+        dni,
+        trabajo,
+        tipoEmpleo,
+        ingMensual,
+        otrasDeudas,
+        tarjetaCredito,
+        prestamoBancario,
+        prestamoInformal,
+        montoSolicitado,
+        plazoDevolucion,
+        aceptaTerminos
+    );
+
+    ViewBag.puede = puede;
+
+    return View();
+}
 
     public IActionResult Privacy()
     {

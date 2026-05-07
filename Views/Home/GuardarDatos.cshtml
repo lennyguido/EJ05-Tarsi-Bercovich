@@ -1,1 +1,7 @@
-<h1> ENVIADO </h1>
+@if(ViewBag.puede = true){
+    <h1> Felicidades, tu préstamo será entregado. </h1>
+}
+@if(ViewBag.puede = false)
+{
+     <h1> Tu préstamo no será entregado. </h1>
+}

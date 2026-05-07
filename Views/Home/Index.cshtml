@@ -3,51 +3,96 @@
 }
 
 
-<form action='@Url.Action("GuardarDatos", "Home")' method="POST" >
-<h2>Datos personales: </h2><br> </br>
-Ingrese su nombre completo:
-<input type="text" name="nombre"  /> <br> </br>
-Ingrese su edad:
-<input type="number" name="edad"  /><br> </br>
-Ingrese su DNI:
-<input type="number" name="dni"  /><br> </br>
-<h2>Situación laboral: </h2>
-Actualmente trabaja?<br> </br>
-Si
-<input type="radio" name="trabajo">
-No
-<input type="radio" name="trabajo"  /><br> </br>
-Seleccione su tipo de empleo:
-<select name="tipoEmpleo">
-<option value = "1"> Relacion de dependencia </option> 
-<option value = "2"> Monotributista </option>
-<option value = "3" selected> Autonomo </option>
-<option value = "4"> Desempleado </option>
-</select> <br> </br>
-<h2>Información económica: </h2>
- Escriba su ingreso mensual:
- <input type="number" name="ingMensual"  /><br> </br>
- ¿Posee otras deudas<br> </br>
-Si
-<input type="radio" name="trabajo">
-No
-<input type="radio" name="trabajo"  /><br> </br>
-Que servicio necesita <br> </br>
-<input type="checkbox" name="tarjetaCredito">Tarjeta de crédito
-<input type="checkbox" name="prestamoBancario">Prestamo bancario
-<input type="checkbox" name="prestamoInformal">Prestamo informal<br> </br>
-Cuales van a ser sus condiciones del prestamo <br> </br>
-Ingrese su monto solicitado:
-<input type="number" name="montoSolicitado"  /><br> </br>
-Seleccione su plazo de devolución:
-<select name="plazoDevolucion">
-<option value = "1"> 6 meses </option> 
-<option value = "2"> 12 meses </option>
-<option value = "3" selected> 24 meses </option>
-</select> <br> </br>
-<h3>Confirmación </h3>
-<input type="checkbox" name="tarjetaCredito"> Acepta los términos y condiciones?<br> </br>
-<h3>Enviar formulario </h3>
- <input type="submit" value="Enviar">
+<form action='@Url.Action("GuardarDatos", "Home")' method="POST">
+
+    <h2>Datos personales:</h2>
+
+    Ingrese su nombre completo:
+    <input type="text" name="nombre" /> <br><br>
+
+    Ingrese su edad:
+    <input type="number" name="edad" /> <br><br>
+
+    Ingrese su DNI:
+    <input type="number" name="dni" /> <br><br>
+
+
+    <h2>Situación laboral:</h2>
+
+    ¿Actualmente trabaja? <br><br>
+
+    Sí
+    <input type="radio" name="trabajo" value="si">
+
+    No
+    <input type="radio" name="trabajo" value="no"> <br><br>
+
+
+    Seleccione su tipo de empleo:
+
+    <select name="tipoEmpleo">
+        <option value="1">Relación de dependencia</option>
+        <option value="2">Monotributista</option>
+        <option value="3" selected>Autónomo</option>
+        <option value="4">Desempleado</option>
+    </select> <br><br>
+
+
+    <h2>Información económica:</h2>
+
+    Escriba su ingreso mensual:
+    <input type="number" name="ingMensual" /> <br><br>
+
+
+    ¿Posee otras deudas? <br><br>
+
+    Sí
+    <input type="radio" name="otrasDeudas" value="si">
+
+    No
+    <input type="radio" name="otrasDeudas" value="no"> <br><br>
+
+
+    ¿Qué servicio necesita? <br><br>
+
+    <input type="checkbox" name="tarjetaCredito"> Tarjeta de crédito
+
+    <input type="checkbox" name="prestamoBancario"> Préstamo bancario
+
+    <input type="checkbox" name="prestamoInformal"> Préstamo informal
+
+    <br><br>
+
+
+    <h2>Condiciones del préstamo:</h2>
+
+    Ingrese su monto solicitado:
+    <input type="number" name="montoSolicitado" /> <br><br>
+
+
+    Seleccione su plazo de devolución:
+
+    <select name="plazoDevolucion">
+        <option value="1">6 meses</option>
+        <option value="2">12 meses</option>
+        <option value="3" selected>24 meses</option>
+    </select>
+
+    <br><br>
+
+
+    <h3>Confirmación</h3>
+
+    <input type="checkbox" name="aceptaTerminos">
+    Acepta los términos y condiciones
+
+    <br><br>
+
+
+    <h3>Enviar formulario</h3>
+
+    <input type="submit" value="Enviar">
+
+    <input type="reset" value="Resetear formulario">
 
 </form>
