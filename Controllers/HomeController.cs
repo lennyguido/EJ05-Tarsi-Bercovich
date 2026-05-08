@@ -31,7 +31,7 @@ public IActionResult GuardarDatos(
     bool prestamoInformal,
     int montoSolicitado,
     int plazoDevolucion,
-    bool aceptaTerminos)
+    string aceptaTerminos)
 {
 
     ViewBag.nombre = nombre;
@@ -47,6 +47,9 @@ public IActionResult GuardarDatos(
     ViewBag.montoSolicitado = montoSolicitado;
     ViewBag.plazoDevolucion = plazoDevolucion;
     ViewBag.aceptaTerminos = aceptaTerminos;
+
+     
+
 
     verificar ver = new verificar();
 
@@ -65,8 +68,7 @@ public IActionResult GuardarDatos(
         plazoDevolucion,
         aceptaTerminos
     );
-
-    ViewBag.puede = puede;
+       ViewBag.puede = puede;
 
     return View();
 }
